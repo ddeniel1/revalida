@@ -1,3 +1,6 @@
+import 'dart:ui' as ui;
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
@@ -25,6 +28,17 @@ class _StatisticsSectionState extends State<StatisticsSection>
 
   @override
   void initState() {
+        
+    final IFrameElement _iframeElement = IFrameElement();
+    _iframeElement.height = '500';
+    _iframeElement.width = '500';
+    _iframeElement.src = 'http://revalida.herokuapp.com/public/dashboard/ceadfa5e-0ad6-4de3-8ead-e0a795c7ae39';
+    _iframeElement.style.border = 'none';
+
+    ui.platformViewRegistry.registerViewFactory(
+      'iframeElement',
+      (int viewId) => _iframeElement,
+    );
     super.initState();
     _controller = AnimationController(
       vsync: this,
@@ -40,6 +54,11 @@ class _StatisticsSectionState extends State<StatisticsSection>
 
   @override
   Widget build(BuildContext context) {
+     Widget _iframeWidget;
+    _iframeWidget = HtmlElementView(
+      key: UniqueKey(),
+      viewType: 'iframeElement',
+    );
     double contentAreaWidth =
         widthOfScreen(context) - (getSidePadding(context) * 2);
     return VisibilityDetector(
@@ -52,76 +71,58 @@ class _StatisticsSectionState extends State<StatisticsSection>
       },
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: getSidePadding(context)),
-        child: Card(
-          elevation: Sizes.ELEVATION_4,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(Sizes.RADIUS_10),
-            ),
-          ),
-          color: AppColors.black400,
-          child: ResponsiveBuilder(
-            refinedBreakpoints: RefinedBreakpoints(),
-            builder: (context, sizingInformation) {
-              double screenWidth = sizingInformation.screenSize.width;
-              if (screenWidth < (RefinedBreakpoints().tabletLarge)) {
-                return Container(
-                  width: contentAreaWidth,
-                  padding:
-                      const EdgeInsets.symmetric(vertical: Sizes.PADDING_40),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      SpaceH30(),
-                      ..._buildItems(Data.statItemsData),
-                      SpaceH30(),
-                    ],
-                  ),
-                );
-              } else {
-                return ClipRRect(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(Sizes.RADIUS_10),
-                    bottomRight: Radius.circular(Sizes.RADIUS_10),
-                  ),
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        top: -75,
-                        left: -50,
-                        child: Image.asset(
-                          ImagePath.BOX_COVER_GOLD,
-                          height: 200,
-                        ),
+        child:  ResponsiveBuilder(
+          refinedBreakpoints: RefinedBreakpoints(),
+          builder: (context, sizingInformation) {
+            double screenWidth = sizingInformation.screenSize.width;
+            if (screenWidth < (RefinedBreakpoints().tabletLarge)) {
+              return Container(
+                width: contentAreaWidth,
+                padding:
+                    const EdgeInsets.symmetric(vertical: Sizes.PADDING_40),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    SpaceH30(),
+                    SizedBox(
+                        height: 500,
+                        width: contentAreaWidth,
+                        child: _iframeWidget,
+                    ),
+                    SpaceH30(),
+                  ],
+                ),
+              );
+            } else {
+              return ClipRRect(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(Sizes.RADIUS_10),
+                  bottomRight: Radius.circular(Sizes.RADIUS_10),
+                ),
+                child: Stack(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: Sizes.PADDING_40),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Spacer(),
+                          SizedBox(
+                              height: 500,
+                              width: contentAreaWidth,
+                              child: _iframeWidget,
+                          ),
+                          Spacer(),
+                        ],
                       ),
-                      Positioned(
-                        right: -25,
-                        bottom: -25,
-                        child: Image.asset(
-                          ImagePath.BOX_COVER_BLACK,
-                          height: 200,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: Sizes.PADDING_40),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Spacer(),
-                            ..._buildItems(Data.statItemsData,
-                                isHorizontal: true),
-                            Spacer(),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              }
-            },
-          ),
+                    ),
+                  ],
+                ),
+              );
+            }
+          },
         ),
       ),
     );

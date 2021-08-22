@@ -49,8 +49,36 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
     super.dispose();
   }
 
+  showAlertDialog(BuildContext context, String message) {
+
+  // set up the button
+  Widget okButton = TextButton(
+    child: Text("OK"),
+    onPressed: () {Navigator.of(context).pop();},
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text(""),
+    content: Text(message),
+    actions: [
+      okButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
+}
+
   @override
   Widget build(BuildContext context) {
+
+    
     TextTheme textTheme = Theme.of(context).textTheme;
     double headerIntroTextSize = responsiveSize(
       context,
@@ -110,18 +138,6 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                         ImagePath.BLOB_BLACK,
                         height: sizeOfBlobSm,
                         width: sizeOfBlobSm,
-                      ),
-                    ),
-                    Positioned(
-                      left: -(sizeOfGoldenGlobe * 0.5),
-                      top: blobOffset + dottedGoldenGlobeOffset,
-                      child: RotationTransition(
-                        turns: _controller,
-                        child: Image.asset(
-                          ImagePath.DOTS_GLOBE_YELLOW,
-                          width: sizeOfGoldenGlobe,
-                          height: sizeOfGoldenGlobe,
-                        ),
                       ),
                     ),
                   ],
@@ -251,7 +267,11 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                   height: buttonHeight,
                                   buttonTitle: StringConst.DOWNLOAD_CV,
                                   buttonColor: AppColors.primaryColor,
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    showAlertDialog(
+                                      context,
+                                      "Login bem-sucedido!");
+                                    },
                                 ),
                                 SpaceW16(),
                                 NimbusButton(
