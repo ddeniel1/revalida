@@ -1,5 +1,4 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
 import 'package:nimbus/presentation/pages/home/sections/header_section/widgets.dart';
@@ -7,23 +6,22 @@ import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
 import 'package:nimbus/presentation/widgets/content_area.dart';
 import 'package:nimbus/presentation/widgets/buttons/nimbus_button_link.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/utils/functions.dart';
 import 'package:nimbus/values/values.dart';
-import 'package:responsive_builder/responsive_builder.dart';
-
 
 const double bodyTextSizeLg = 16.0;
 const double bodyTextSizeSm = 14.0;
 const double socialTextSizeLg = 18.0;
 const double socialTextSizeSm = 14.0;
-// const double sidePadding = Sizes.PADDING_16;
+const double sidePadding = Sizes.PADDING_16;
 
-class HeaderSectionWeb extends StatefulWidget {
+class HeaderSectionMobile extends StatefulWidget {
+  const HeaderSectionMobile({Key? key}) : super(key: key);
+
   @override
-  _HeaderSectionWebState createState() => _HeaderSectionWebState();
+  _HeaderSectionMobileState createState() => _HeaderSectionMobileState();
 }
 
-class _HeaderSectionWebState extends State<HeaderSectionWeb>
+class _HeaderSectionMobileState extends State<HeaderSectionMobile>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
@@ -50,74 +48,22 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
     super.dispose();
   }
 
-  showAlertDialog(BuildContext context, String message) {
-
-  // set up the button
-  Widget okButton = TextButton(
-    child: Text("OK"),
-    onPressed: () {Navigator.of(context).pop();},
-  );
-
-  // set up the AlertDialog
-  AlertDialog alert = AlertDialog(
-    title: Text(""),
-    content: Text(message),
-    actions: [
-      okButton,
-    ],
-  );
-
-  // show the dialog
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return alert;
-    },
-  );
-}
-
   @override
   Widget build(BuildContext context) {
-
-    
     TextTheme textTheme = Theme.of(context).textTheme;
-    double headerIntroTextSize = responsiveSize(
-      context,
-      Sizes.TEXT_SIZE_24,
-      Sizes.TEXT_SIZE_56,
-      md: Sizes.TEXT_SIZE_36,
-    );
-    double bodyTextSize =
-        responsiveSize(context, bodyTextSizeSm, bodyTextSizeLg);
-    double socialTextSize =
-        responsiveSize(context, socialTextSizeSm, socialTextSizeLg);
-    double screenWidth = widthOfScreen(context);
+    double headerIntroTextSize = Sizes.TEXT_SIZE_24;
+    double screenWidth = widthOfScreen(context) - (sidePadding * 2);
     double contentAreaWidth = screenWidth;
     TextStyle? bodyTextStyle =
-        textTheme.bodyText1?.copyWith(fontSize: bodyTextSize);
+        textTheme.bodyText1?.copyWith(fontSize: bodyTextSizeSm);
     TextStyle? socialTitleStyle =
-        textTheme.subtitle1?.copyWith(fontSize: socialTextSize);
+        textTheme.subtitle1?.copyWith(fontSize: socialTextSizeSm);
 
-    List<Widget> cardsForTabletView = buildCardRow(
-      context: context,
-      data: Data.nimbusCardData,
-      width: contentAreaWidth * 0.4,
-      isWrap: true,
-    );
-    double buttonWidth = responsiveSize(
-      context,
-      80,
-      150,
-    );
-    double buttonHeight = responsiveSize(
-      context,
-      48,
-      60,
-      md: 54,
-    );
+    double buttonWidth = 80;
+    double buttonHeight = 48;
 
-    double sizeOfBlobSm = screenWidth * 0.3;
-    double sizeOfGoldenGlobe = screenWidth * 0.2;
+    double sizeOfBlobSm = screenWidth * 0.4;
+    double sizeOfGoldenGlobe = screenWidth * 0.3;
     double dottedGoldenGlobeOffset = sizeOfBlobSm * 0.4;
     double heightOfBlobAndGlobe =
         computeHeight(dottedGoldenGlobeOffset, sizeOfGoldenGlobe, sizeOfBlobSm);
@@ -130,21 +76,8 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
             height: heightOfStack,
             child: Stack(
               children: [
-                Stack(
-                  children: [
-                    Positioned(
-                      left: -(sizeOfBlobSm * 0.7),
-                      top: blobOffset,
-                      child: Image.asset(
-                        ImagePath.BLOB_BLACK,
-                        height: sizeOfBlobSm,
-                        width: sizeOfBlobSm,
-                      ),
-                    ),
-                  ],
-                ),
                 Positioned(
-                  right: -(sizeOfBlobSm* 0.8),
+                  right: -(sizeOfBlobSm),
                   child: HeaderImage(
                     controller: _controller,
                     globeSize: sizeOfGoldenGlobe,
@@ -160,17 +93,19 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
               Stack(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: heightOfStack * 0.05),
+                    margin: EdgeInsets.only(top: heightOfStack * 0.1),
                     child: SelectableText(
                       StringConst.FIRST_NAME,
                       style: textTheme.headline1?.copyWith(
                         color: AppColors.grey50,
-                        fontSize: headerIntroTextSize * 2,
+                        fontSize: headerIntroTextSize * 2.5,
                       ),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: heightOfStack * 0.2, left: (sizeOfBlobSm * 0.35)),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: sidePadding),
+                    margin: EdgeInsets.only(top: heightOfStack * 0.3),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -219,10 +154,13 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                             SpaceH16(),
                             ConstrainedBox(
                               constraints:
-                                  BoxConstraints(maxWidth: screenWidth * 0.35),
+                                  BoxConstraints(maxWidth: screenWidth * 0.5),
                               child: SelectableText(
                                 StringConst.ABOUT_DEV,
-                                style: bodyTextStyle?.copyWith(height: 1.5),
+                                style: bodyTextStyle?.copyWith(
+                                  height: 1.5,
+                                  // color: AppColors.black,
+                                ),
                               ),
                             ),
                             SpaceH30(),
@@ -267,37 +205,20 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                   width: buttonWidth,
                                   height: buttonHeight,
                                   buttonTitle: StringConst.DOWNLOAD_CV,
-                                  buttonColor: AppColors.primaryColor,
-                                  onPressed: () {
-                                    showAlertDialog(
-                                      context,
-                                      "Login bem-sucedido!");
-                                    },
+                                  onPressed: () {},
                                 ),
                                 SpaceW16(),
-                                NimbusButton(
+                                  NimbusButton(
                                   width: buttonWidth,
                                   height: buttonHeight,
                                   buttonTitle: StringConst.HIRE_ME_NOW,
-                                  onPressed: () {
-                                    showAlertDialog(
-                                      context,
-                                      "Cadastro bem-sucedido!");
-                                    },
+                                  onPressed: (){},
                                 ),
-                                //NimbusButton(
-                                  //width: buttonWidth,
-                                  //height: buttonHeight,
-                                  //buttonTitle: StringConst.HIRE_ME_NOW,
-                                  //opensUrl: true,
-                                  //url: StringConst.EMAIL_URL,
-                                  // onPressed: () =>
-                                  //     openUrlLink(StringConst.EMAIL_URL),
-                                //),
                                 // NimBusButtonLink(
                                 //   width: buttonWidth,
                                 //   height: buttonHeight,
                                 //   url: StringConst.EMAIL_URL,
+                                //   buttonColor: AppColors.primaryColor,
                                 //   buttonTitle: StringConst.HIRE_ME_NOW,
                                 // ),
                               ],
@@ -313,64 +234,19 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                   ),
                 ],
               ),
-              SizedBox(height: 150),
-              Container(
-                margin: EdgeInsets.only(left: (sizeOfBlobSm * 0.35)),
-                child: ResponsiveBuilder(
-                  refinedBreakpoints: RefinedBreakpoints(),
-                  builder: (context, sizingInformation) {
-                    double screenWidth = sizingInformation.screenSize.width;
-                    if (screenWidth < RefinedBreakpoints().tabletNormal) {
-                      return Container(
-                         margin: EdgeInsets.only(right: (sizeOfBlobSm * 0.35)),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: buildCardRow(
-                            context: context,
-                            data: Data.nimbusCardData,
-                            width: contentAreaWidth,
-                            isHorizontal: false,
-                            hasAnimation: false,
-                          ),
-                        ),
-                      );
-                    }else if (screenWidth >=
-                            RefinedBreakpoints().tabletNormal &&
-                        screenWidth <= 1024) {
-                      return Wrap(
-                        runSpacing: 24,
-                        children: [
-                          SizedBox(width: contentAreaWidth * 0.03),
-                          cardsForTabletView[0],
-                          SpaceW40(),
-                          cardsForTabletView[1],
-                          SizedBox(width: contentAreaWidth * 0.03),
-                          Center(
-                            child: Container(
-                              margin: EdgeInsets.only(top: 20),
-                              child: cardsForTabletView[2],
-                            ),
-                          ),
-                        ],
-                      );
-                    } else {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              ...buildCardRow(
-                                context: context,
-                                data: Data.nimbusCardData,
-                                width: contentAreaWidth / 3.8,
-                              ),
-                              Spacer(),
-                            ],
-                          ),
-                        ],
-                      );
-                    } 
-                  },
+              SpaceH40(),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: sidePadding,
+                ),
+                child: Column(
+                  children: buildCardRow(
+                    context: context,
+                    data: Data.nimbusCardData,
+                    width: contentAreaWidth,
+                    isHorizontal: false,
+                    hasAnimation: false,
+                  ),
                 ),
               ),
             ],
@@ -379,6 +255,4 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
       ),
     );
   }
-
-  
 }

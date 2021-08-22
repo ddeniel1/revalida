@@ -103,8 +103,8 @@ class Data {
   ];
 
   static List<ProjectCategoryData> projectCategories = [
-    ProjectCategoryData(title: StringConst.ALL, number: 6, isSelected: true),
-    ProjectCategoryData(title: StringConst.BRANDING, number: 1),
+    ProjectCategoryData(title: StringConst.ALL, number: 1, isSelected: true),
+    ProjectCategoryData(title: StringConst.EMPRESAS, number: 1),
     ProjectCategoryData(title: StringConst.PACKAGING, number: 1),
     ProjectCategoryData(title: StringConst.PHOTOGRAPHER, number: 2),
     ProjectCategoryData(title: StringConst.WEB_DESIGN, number: 3),
@@ -188,7 +188,7 @@ class Data {
     ),
     ProjectData(
       title: StringConst.PORTFOLIO_3_TITLE,
-      category: StringConst.BRANDING,
+      category: StringConst.EMPRESAS,
       projectCoverUrl: ImagePath.PORTFOLIO_3,
       width: 0.225,
     ),
@@ -215,7 +215,7 @@ class Data {
   static List<ProjectData> branding = [
     ProjectData(
       title: StringConst.PORTFOLIO_3_TITLE,
-      category: StringConst.BRANDING,
+      category: StringConst.EMPRESAS,
       projectCoverUrl: ImagePath.PORTFOLIO_3,
       width: 0.225,
     ),

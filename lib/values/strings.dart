@@ -3,6 +3,7 @@ part of values;
 class StringConst {
   //strings
   static const String APP_NAME = "ReValida";
+  static const String SECOND_NAME = "ReValida - Empresas";
 
   //Nav Section
   static const String NAME_ABBREV = "CA";
@@ -17,6 +18,7 @@ class StringConst {
 
   static const String LOGIN = "Login";
   static const String DEV_EMAIL = "davidcobbina47@gmail.com";
+  static const String AREA_EMPRESAS = "/empresas/";
   static const String EMAIL_URL = "mailto:<$DEV_EMAIL>?subject=&body=";
 
   //Header Section
@@ -113,7 +115,7 @@ class StringConst {
       "Além de sermos uma empresa de vagas, focamos no seu desenvolvimento pessoal e sua realocação no mercado.\nQueremos que você consiga conversar com as empresas, pesquisar universidades mais próximas que possam validar o seu diploma.\nAlém de falar conosco quando quiser sanar dúvidas e saber mais sobre como nós funcionamos.";
   static const String ALL_PROJECTS = "All Projects";
   static const String ALL = "All";
-  static const String BRANDING = "Branding";
+  static const String EMPRESAS = "Empresas ativas";
   static const String PACKAGING = "Packaging";
   static const String PHOTOGRAPHY = "Photography";
   static const String WEB_DESIGN = "Web Design";
