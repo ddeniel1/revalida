@@ -110,11 +110,11 @@ class StringConst {
   static const String MEET_MY_PROJECTS = "Conheça nossos serviços";
   static const String MY_WORKS = "imigrante";
   static const String PROJECTS_DESC =
-      "Além de sermos uma empresa de vagas, focamos no seu desenvolvimento pessoal e sua realocação no mercado.\nQueremos que você consiga conversar com as empresas, pesquisar universidades mais próximas que possam validar o seu diploma.\nAlém de falar conosco quando quiser sanar dúvidas e saber mais sobre como nós funcionamos.";
+      "Além de sermos uma empresa de vagas, focamos no seu desenvolvimento pessoal e sua realocação no mercado.\nQueremos que você consiga conversar com as empresas, pesquisar universidades mais próximas que possam validar o seu diploma.\nAlém de poder falar conosco quando quiser para sanar dúvidas e saber mais sobre como nós funcionamos.";
   static const String ALL_PROJECTS = "All Projects";
-  static const String ALL = "All";
-  static const String BRANDING = "Branding";
-  static const String PACKAGING = "Packaging";
+  static const String ALL = "Documentos necessários";
+  static const String BRANDING = "Empresas ativas";
+  static const String PACKAGING = "";
   static const String PHOTOGRAPHY = "Photography";
   static const String WEB_DESIGN = "Web Design";
   static const String PORTFOLIO_1_TITLE = "Urban Experience";
