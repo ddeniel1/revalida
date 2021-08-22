@@ -114,16 +114,18 @@ class _ProjectsSectionState extends State<ProjectsSection>
                       onPressed: () {},
                     ),
                     SpaceH40(),
-                    ContentArea(
-                      width: widthOfScreen(context),
-                      child:
-                      Align(
-                          alignment: Alignment.center,
-                          child: Image.asset(ImagePath.STATUS_EXAMPLE, 
-                            height: screenHeight * 0.40,
-                            width: screenWidth * 0.40
-                          )
-                        )
+                    Wrap(
+                      spacing: kSpacing,
+                      runSpacing: kRunSpacing,
+                      children: _buildProjectCategories(projectCategories),
+                    ),
+                    SpaceH40(),
+                    Wrap(
+                      runSpacing: assignHeight(context, 0.05),
+                      children: _buildProjects(
+                        selectedProject,
+                        isMobile: true,
+                      ),
                     ),
                   ],
                 ),
@@ -165,21 +167,13 @@ class _ProjectsSectionState extends State<ProjectsSection>
                     ),
                   ),
                   SpaceH40(),
-                  ContentArea(
+                  Container(
                     width: widthOfScreen(context),
-                    child:
-                     Align(
-                        alignment: Alignment.center,
-                        child: Image.asset(ImagePath.STATUS_EXAMPLE, 
-                          height: screenHeight * 0.40,
-                          width: screenWidth * 0.40
-                        )
-                      )
-                      //Wrap(
-                      //spacing: assignWidth(context, 0.025),
-                      //runSpacing: assignWidth(context, 0.025),
-                      //children: _buildProjects(selectedProject),
-                    //),
+                    child: Wrap(
+                      spacing: assignWidth(context, 0.025),
+                      runSpacing: assignWidth(context, 0.025),
+                      children: _buildProjects(selectedProject),
+                    ),
                   ),
                 ],
               ),
