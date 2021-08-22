@@ -103,11 +103,8 @@ class Data {
   ];
 
   static List<ProjectCategoryData> projectCategories = [
-    ProjectCategoryData(title: StringConst.ALL, number: 6, isSelected: true),
-    ProjectCategoryData(title: StringConst.BRANDING, number: 1),
-    ProjectCategoryData(title: StringConst.PACKAGING, number: 1),
-    ProjectCategoryData(title: StringConst.PHOTOGRAPHY, number: 2),
-    ProjectCategoryData(title: StringConst.WEB_DESIGN, number: 3),
+    ProjectCategoryData(title: StringConst.ALL, number: 0, isSelected: true),
+    ProjectCategoryData(title: StringConst.BRANDING, number: 0),
   ];
 
   static List<String> awards1 = [
