@@ -27,17 +27,6 @@ class HeaderImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Positioned(
-          left: 0,
-          child: RotationTransition(
-            turns: controller,
-            child: Image.asset(
-              ImagePath.DOTS_GLOBE_GREY,
-              height: globeSize,
-              width: globeSize,
-            ),
-          ),
-        ),
         Image.asset(
           ImagePath.DEV_HEADER,
           width: imageWidth,

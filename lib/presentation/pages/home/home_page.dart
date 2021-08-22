@@ -1,3 +1,6 @@
+import 'dart:ui' as ui;
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
@@ -14,6 +17,7 @@ import 'package:nimbus/presentation/pages/home/sections/statistics_section.dart'
 import 'package:nimbus/presentation/widgets/app_drawer.dart';
 import 'package:nimbus/presentation/widgets/nav_item.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 import 'package:nimbus/utils/functions.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -166,10 +170,10 @@ class _HomePageState extends State<HomePage>
                         children: [
                           Container(
                             key: navItems[2].key,
-                            child: SkillsSection(),
+                            child: StatisticsSection(),
                           ),
                           SizedBox(height: spacerHeight),
-                          StatisticsSection(),
+                          //StatisticsSection(),
                           SizedBox(height: spacerHeight),
                           Container(
                             key: navItems[3].key,
@@ -182,12 +186,13 @@ class _HomePageState extends State<HomePage>
                   SizedBox(height: spacerHeight),
                   Stack(
                     children: [
-                      Positioned(
-                        left: -assignWidth(context, 0.6),
-                        child: Image.asset(ImagePath.BLOB_ASH),
-                      ),
-                    ],
-                  ),
+                      Column(
+                        children: [
+                          FooterSection()
+                        ]
+                      )
+                    ]
+                  )
                 ],
               ),
             ),

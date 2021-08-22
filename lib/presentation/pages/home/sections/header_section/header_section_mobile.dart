@@ -76,31 +76,6 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
             height: heightOfStack,
             child: Stack(
               children: [
-                Stack(
-                  children: [
-                    // Positioned(
-                    //   left: -(sizeOfBlobSm * 0.7),
-                    //   top: blobOffset,
-                    //   child: Image.asset(
-                    //     ImagePath.BLOB_BLACK,
-                    //     height: sizeOfBlobSm,
-                    //     width: sizeOfBlobSm,
-                    //   ),
-                    // ),
-                    Positioned(
-                      left: -(sizeOfGoldenGlobe / 3),
-                      top: blobOffset + dottedGoldenGlobeOffset,
-                      child: RotationTransition(
-                        turns: _controller,
-                        child: Image.asset(
-                          ImagePath.DOTS_GLOBE_YELLOW,
-                          width: sizeOfGoldenGlobe,
-                          height: sizeOfGoldenGlobe,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
                 Positioned(
                   right: -(sizeOfBlobSm),
                   child: HeaderImage(

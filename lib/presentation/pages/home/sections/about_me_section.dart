@@ -199,18 +199,6 @@ class _AboutMeSectionState extends State<AboutMeSection>
         ),
         Stack(
           children: [
-            Positioned(
-              left: 0,
-              bottom: 0,
-              child: ScaleTransition(
-                scale: _scaleAnimation,
-                child: Image.asset(
-                  ImagePath.DOTS_GLOBE_GREY,
-                  width: 180,
-                  height: 180,
-                ),
-              ),
-            ),
             ScaleTransition(
               scale: _scaleAnimation,
               child: Image.asset(
