@@ -48,6 +48,32 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
     super.dispose();
   }
 
+  showAlertDialog(BuildContext context, String message) {
+
+  // set up the button
+  Widget okButton = TextButton(
+    child: Text("OK"),
+    onPressed: () {Navigator.of(context).pop();},
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text(""),
+    content: Text(message),
+    actions: [
+      okButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
+}
+
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
@@ -164,55 +190,28 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                               ),
                             ),
                             SpaceH30(),
-                            Wrap(
-                              // mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    SelectableText(
-                                      "${StringConst.EMAIL}:",
-                                      style: socialTitleStyle,
-                                    ),
-                                    SpaceH8(),
-                                    SelectableText(
-                                      "${StringConst.DEV_EMAIL_2}",
-                                      style: bodyTextStyle,
-                                    ),
-                                  ],
-                                ),
-                                SpaceW16(),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    SelectableText(
-                                      "${StringConst.BEHANCE}:",
-                                      style: socialTitleStyle,
-                                    ),
-                                    SpaceH8(),
-                                    SelectableText(
-                                      "${StringConst.BEHANCE_ID}",
-                                      style: bodyTextStyle,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            SpaceH40(),
                             Row(
                               children: [
                                 NimbusButton(
                                   width: buttonWidth,
                                   height: buttonHeight,
                                   buttonTitle: StringConst.DOWNLOAD_CV,
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    showAlertDialog(
+                                      context,
+                                      "Login bem-sucedido!");
+                                    },
                                 ),
                                 SpaceW16(),
                                   NimbusButton(
                                   width: buttonWidth,
                                   height: buttonHeight,
                                   buttonTitle: StringConst.HIRE_ME_NOW,
-                                  onPressed: (){},
+                                  onPressed: (){
+                                    showAlertDialog(
+                                      context,
+                                      "Cadastro bem-sucedido!");
+                                    },
                                 ),
                                 // NimBusButtonLink(
                                 //   width: buttonWidth,
@@ -233,21 +232,6 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                     ),
                   ),
                 ],
-              ),
-              SpaceH40(),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: sidePadding,
-                ),
-                child: Column(
-                  children: buildCardRow(
-                    context: context,
-                    data: Data.nimbusCardData,
-                    width: contentAreaWidth,
-                    isHorizontal: false,
-                    hasAnimation: false,
-                  ),
-                ),
               ),
             ],
           ),
