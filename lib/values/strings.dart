@@ -16,7 +16,7 @@ class StringConst {
   static const String SKILLS = "Skills";
   static const String CONTACT = "Contacts";
 
-  static const String LOGIN = "Login";
+  static const String LOGIN = "Contato";
   static const String DEV_EMAIL = "davidcobbina47@gmail.com";
   static const String AREA_EMPRESAS = "/empresas/";
   static const String EMAIL_URL = "mailto:<$DEV_EMAIL>?subject=&body=";
@@ -26,23 +26,23 @@ class StringConst {
   static const String INTRO = "Seu diploma conosco";
   static const String POSITION = "vale no brasil inteiro!";
   static const String ABOUT_DEV =
-      "Venha reconstruir sua vida!\nFaça login ou cadastre-se e veja o que podemos fazer por você:";
+      "Venha recomeçar sua vida!\nFaça login ou cadastre-se e veja o que podemos fazer por você:";
   static const String ABOUT_ME_1 =
-      "Venha reconstruir sua vida!";
+      "Venha recomeçar sua vida!";
   static const String ABOUT_ME_2 =
       "Faça login ou cadastre-se e veja o que podemos fazer por você:";
   static const String DOWNLOAD_CV = "Login";
-  static const String EMAIL = "Email"; //RETIRAR SEÇAO INTEIRA
-  static const String DEV_EMAIL_2 = "nimbus2000@mail.com";
+  static const String EMAIL = ""; //RETIRAR SEÇAO INTEIRA
+  static const String DEV_EMAIL_2 = "";
   static const String BEHANCE = "";
-  static const String BEHANCE_ID = "behance.net/nimbus200";
+  static const String BEHANCE_ID = "";
   static const String HIRE_ME_NOW = "Cadastre-se";
-  static const String UI_UX = "UI/UX Designer";
-  static const String UI_UX_DESC = "creative websites for you";
-  static const String PHOTOGRAPHER = "Photographer";
-  static const String PHOTOGRAPHER_DESC = "Awesome photo & video";
-  static const String FREELANCER = "Freelancer";
-  static const String FREELANCER_DESC = "You can hire me now";
+  static const String UI_UX = "PODEMOS VER";
+  static const String UI_UX_DESC = "O QUE QUE CADA UM";
+  static const String PHOTOGRAPHER = "DESSES CARDS";
+  static const String PHOTOGRAPHER_DESC = "PODE FAZER";
+  static const String FREELANCER = "OU SER SÓ UMA";
+  static const String FREELANCER_DESC = "INFO PRO USER QQR COISA";
 
   static const String PYTHON = "Python";
   static const String JAVA = "Java";
@@ -112,13 +112,15 @@ class StringConst {
   static const String MEET_MY_PROJECTS = "Conheça nossos serviços";
   static const String MY_WORKS = "imigrante";
   static const String PROJECTS_DESC =
-      "Além de sermos uma empresa de vagas, focamos no seu desenvolvimento pessoal e sua realocação no mercado.\nQueremos que você consiga conversar com as empresas, pesquisar universidades mais próximas que possam validar o seu diploma.\nAlém de falar conosco quando quiser sanar dúvidas e saber mais sobre como nós funcionamos.";
-  static const String ALL_PROJECTS = "All Projects";
-  static const String ALL = "All";
+      "Além de sermos uma empresa de vagas, focamos no seu desenvolvimento pessoal e sua realocação no mercado.\nQueremos que você consiga conversar com as empresas, pesquisar universidades mais próximas que possam validar o seu diploma.\nAlém de poder falar conosco quando quiser para sanar dúvidas e saber mais sobre como nós funcionamos.";
+  static const String ALL_PROJECTS = "All Projects"; //botao que o daniel vai mexer
+  static const String ALL = "Documentos necessários";
+  static const String BRANDING = "Vagas";
   static const String EMPRESAS = "Empresas ativas";
-  static const String PACKAGING = "Packaging";
-  static const String PHOTOGRAPHY = "Photography";
-  static const String WEB_DESIGN = "Web Design";
+  static const String PACKAGING = "";
+  static const String PHOTOGRAPHY = "";
+  static const String WEB_DESIGN = "";
+
   static const String PORTFOLIO_1_TITLE = "Urban Experience";
   static const String PORTFOLIO_2_TITLE = "Graphic Design";
   static const String PORTFOLIO_3_TITLE = "Launch Product";
@@ -181,11 +183,11 @@ class StringConst {
   static const String BLOGGING = "Blogging";
 
   //Footer Section
-  static const String LETS_TALK = "Let's Talk!";
-  static const String PHONE_ME = "Phone Me";
-  static const String PHONE_NUMBER = "+1 800 123 456 789";
-  static const String MAIL_ME = "Mail Me";
-  static const String FOLLOW_ME_2 = "Follow Me";
+  static const String LETS_TALK = "Converse conosco!";
+  static const String PHONE_ME = "Zap";
+  static const String PHONE_NUMBER = "+55 11 91234-5678";
+  static const String MAIL_ME = "E-mail";
+  static const String FOLLOW_ME_2 = "Nos siga";
   static const String FOLLOW_ME_2_URL = "behance.net/nimbus2000";
   static const String RIGHTS_RESERVED = "© 2021 All rights reserved";
   static const String BUILT_BY = "Built with Flutter by";
