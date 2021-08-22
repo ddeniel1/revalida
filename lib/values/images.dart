@@ -32,6 +32,9 @@ class ImagePath {
   static const String BLOG_02 = "$imageDir/blog_02.jpg";
   static const String BLOG_03 = "$imageDir/blog_03.jpg";
 
+  // Example images
+
+  static const String STATUS_EXAMPLE = "$imageDir/status_example.png";
   // Portfolio Images
   static const String PORTFOLIO_1 = "$imageDir/portfolio_01.jpg";
   static const String PORTFOLIO_2 = "$imageDir/portfolio_02.jpg";
