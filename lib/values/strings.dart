@@ -6,10 +6,10 @@ class StringConst {
 
   //Nav Section
   static const String NAME_ABBREV = "CA";
-  static const String HOME = "Home";
-  static const String SERVICES = "Services";
-  static const String ABOUT = "About";
-  static const String PROJECTS = "Projects";
+  static const String HOME = "Início";
+  static const String BUSINESS = "Serviços para empresa";
+  static const String ABOUT = "Sobre";
+  static const String PROJECTS = "Área do Imigrante";
   static const String AWARDS = "Awards";
   static const String BLOG = "Blog";
   static const String SKILLS = "Skills";
