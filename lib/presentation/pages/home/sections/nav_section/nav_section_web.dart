@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:animations/animations.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
+import 'package:nimbus/presentation/pages/empresas/empresas_page.dart';
+import 'package:nimbus/presentation/pages/home/home_page.dart';
+import 'package:nimbus/presentation/pages/home/sections/statistics_section.dart';
 import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
 import 'package:nimbus/presentation/widgets/buttons/social_button.dart';
 import 'package:nimbus/presentation/widgets/empty.dart';
@@ -11,6 +15,8 @@ import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/utils/functions.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+
+import '../statistic_section_holder.dart';
 
 const double logoSpaceLeftLg = 40.0;
 const double logoSpaceLeftSm = 20.0;
@@ -109,9 +115,8 @@ class _NavSectionWebState extends State<NavSectionWeb> {
              NimbusButton(
               buttonTitle: StringConst.LOGIN,
               width: contactBtnWidth,
-              // onPressed: () => openUrlLink(StringConst.EMAIL_URL),
-              opensUrl: true,
-              url: StringConst.EMAIL_URL,
+              onPressed: () { Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => EmpresasPage()));},
+            //  url: StringConst.AREA_EMPRESAS,
             ),
             SizedBox(width: contactBtnSpaceRight),
           ],
@@ -176,5 +181,25 @@ class _NavSectionWebState extends State<NavSectionWeb> {
       items.add(SpaceW16());
     }
     return items;
+  }
+  Widget createContainer(BuildContext context) {
+    return Card(
+      color: Colors.white,
+      elevation: 2.0,
+      child: OpenContainer(
+        transitionType: ContainerTransitionType.fade,
+        closedColor: Theme.of(context).cardColor,
+        closedElevation: 0.0,
+        openElevation: 4.0,
+        transitionDuration: Duration(milliseconds: 1500),
+        openBuilder: (BuildContext context, VoidCallback _) => StatisticSelectionHolder(),
+        closedBuilder: (BuildContext _, VoidCallback openContainer) {
+          return ListTile(
+            leading: Icon(Icons.album),
+            title: Text("Fita"),
+          );
+        },
+      )
+    );
   }
 }

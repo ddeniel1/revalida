@@ -106,6 +106,7 @@ class Data {
     ProjectCategoryData(title: StringConst.ALL, number: 0, isSelected: true),
     ProjectCategoryData(title: StringConst.BRANDING, number: 0),
     ProjectCategoryData(title: StringConst.PHOTOGRAPHY, number: 0)
+
   ];
 
   static List<String> awards1 = [
@@ -183,7 +184,7 @@ class Data {
   static List<ProjectData> branding = [
     ProjectData(
       title: StringConst.PORTFOLIO_3_TITLE,
-      category: StringConst.BRANDING,
+      category: StringConst.EMPRESAS,
       projectCoverUrl: ImagePath.PORTFOLIO_3,
       width: 0.35,
     ),
