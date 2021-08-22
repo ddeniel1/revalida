@@ -1,3 +1,6 @@
+import 'dart:ui' as ui;
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
@@ -167,10 +170,10 @@ class _HomePageState extends State<HomePage>
                         children: [
                           Container(
                             key: navItems[2].key,
-                            child: SkillsSection(),
+                            child: StatisticsSection(),
                           ),
                           SizedBox(height: spacerHeight),
-                          StatisticsSection(),
+                          //StatisticsSection(),
                           SizedBox(height: spacerHeight),
                           Container(
                             key: navItems[3].key,
@@ -179,19 +182,6 @@ class _HomePageState extends State<HomePage>
                         ],
                       ),
                     ],
-                  ),
-                  SizedBox(height: spacerHeight),
-                  Stack(
-                    children: [
-                      Column(
-                        children: [
-                          WebView(
-                            initialUrl: 'http://revalida.herokuapp.com/public/dashboard/ceadfa5e-0ad6-4de3-8ead-e0a795c7ae39',
-                            javascriptMode: JavascriptMode.unrestricted
-                          )
-                        ]
-                      )
-                    ]
                   ),
                   SizedBox(height: spacerHeight),
                   Stack(
