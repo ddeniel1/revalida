@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
+import 'package:nimbus/presentation/widgets/buttons/social_button_2.dart';
 import 'package:nimbus/presentation/widgets/content_area.dart';
 import 'package:nimbus/presentation/widgets/empty.dart';
 import 'package:nimbus/presentation/widgets/nimbus_info_section.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
+import 'package:nimbus/utils/functions.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
@@ -14,13 +16,13 @@ const double kRunSpacingSm = 24.0;
 const double kSpacingLg = 24.0;
 const double kRunSpacingLg = 16.0;
 
-class AboutMeSection extends StatefulWidget {
-  AboutMeSection({Key? key});
+class StampSection extends StatefulWidget {
+  StampSection({Key? key});
   @override
-  _AboutMeSectionState createState() => _AboutMeSectionState();
+  _StampSectionState createState() => _StampSectionState();
 }
 
-class _AboutMeSectionState extends State<AboutMeSection>
+class _StampSectionState extends State<StampSection>
     with TickerProviderStateMixin {
   late AnimationController _scaleController;
   late Animation<double> _scaleAnimation;
@@ -73,7 +75,7 @@ class _AboutMeSectionState extends State<AboutMeSection>
     double contentAreaHeightSm = screenHeight * 0.6;
     double contentAreaWidthLg = screenWidth * 0.5;
     return VisibilityDetector(
-      key: Key('about-section'),
+      key: Key('STAMP-SECTION'),
       onVisibilityChanged: (visibilityInfo) {
         double visiblePercentage = visibilityInfo.visibleFraction * 100;
         if (visiblePercentage > 25) {
@@ -132,6 +134,40 @@ class _AboutMeSectionState extends State<AboutMeSection>
     );
   }
 
+  List<Widget> _buildSocialButtons(
+    List<SocialButton2Data> data, {
+    double? width,
+  }) {
+    List<Widget> items = [];
+
+    for (int index = 0; index < data.length; index++) {
+      items.add(
+        SocialButton2(
+          width: width,
+          title: data[index].title.toUpperCase(),
+          iconData: data[index].iconData,
+          onPressed: () => openUrlLink(data[index].url),
+          titleColor: data[index].titleColor,
+          buttonColor: data[index].buttonColor,
+          iconColor: data[index].iconColor,
+        ),
+        // NimBusLink(
+        //   url: data[index].url,
+        //   child: SocialButton2(
+        //     width: width,
+        //     title: data[index].title.toUpperCase(),
+        //     iconData: data[index].iconData,
+        //     onPressed: () {},
+        //     titleColor: data[index].titleColor,
+        //     buttonColor: data[index].buttonColor,
+        //     iconColor: data[index].iconColor,
+        //   ),
+        // ),
+      );
+    }
+    return items;
+  }
+
   Widget _buildImage({required double width, required double height}) {
     TextTheme textTheme = Theme.of(context).textTheme;
     double fontSize = responsiveSize(context, 60, 72, md: 64);
@@ -142,8 +178,8 @@ class _AboutMeSectionState extends State<AboutMeSection>
     return Stack(
       children: [
         Positioned(
-          top: height * 0.1,
-          right: -(width * 0.20),
+          top: height * 0.2,
+          left: width * 0.90,
           child: ResponsiveBuilder(
             refinedBreakpoints: RefinedBreakpoints(),
             builder: (context, sizingInformation) {
@@ -165,7 +201,7 @@ class _AboutMeSectionState extends State<AboutMeSection>
             ScaleTransition(
               scale: _scaleAnimation,
               child: Image.asset(
-                ImagePath.DEV_ABOUT_ME,
+                ImagePath.STAMP,
                 width: width * 0.95,
               ),
             ),
@@ -180,11 +216,11 @@ class _AboutMeSectionState extends State<AboutMeSection>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  StringConst.HI,
+                  "",
                   style: titleStyle,
                 ),
                 Text(
-                  StringConst.THERE,
+                  "",
                   style: titleStyle,
                 ),
               ],
@@ -204,8 +240,8 @@ class _AboutMeSectionState extends State<AboutMeSection>
         //positions blob on the far right of the section
         //based on the calculation only 10% of blob is showing
         Positioned(
-          top: height * 0.2,
-          left: width * 0.90,
+          top: height * 0.1,
+          right: -(width * 0.20),
           child: ResponsiveBuilder(
             refinedBreakpoints: RefinedBreakpoints(),
             builder: (context, sizingInformation) {
@@ -253,10 +289,10 @@ class _AboutMeSectionState extends State<AboutMeSection>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               NimbusInfoSection1(
-                sectionTitle: StringConst.ABOUT_ME,
-                title1: StringConst.CREATIVE_DESIGN,
-                title2: StringConst.HELP,
-                body: StringConst.ABOUT_ME_DESC,
+                sectionTitle: StringConst.STAMP_TITLE,
+                title1: StringConst.STAMP_T1,
+                title2: StringConst.STAMP_T2,
+                body: StringConst.STAMP_TEXT,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -279,10 +315,10 @@ class _AboutMeSectionState extends State<AboutMeSection>
   Widget nimbusInfoSectionSm({required double width}) {
     TextTheme textTheme = Theme.of(context).textTheme;
     return NimbusInfoSection2(
-      sectionTitle: StringConst.ABOUT_ME,
-      title1: StringConst.CREATIVE_DESIGN,
-      title2: StringConst.HELP,
-      body: StringConst.ABOUT_ME_DESC,
+      sectionTitle: StringConst.STAMP_TITLE,
+      title1: StringConst.STAMP_T1,
+      title2: StringConst.STAMP_T2,
+      body: StringConst.STAMP_TEXT,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

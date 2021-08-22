@@ -42,4 +42,7 @@ class ImagePath {
   static const String PORTFOLIO_4 = "$imageDir/portfolio_04.jpg";
   static const String PORTFOLIO_5 = "$imageDir/portfolio_05.png";
   static const String PORTFOLIO_6 = "$imageDir/portfolio_06.jpg";
+
+
+  static const String STAMP = "$imageDir/stamp.png";
 }

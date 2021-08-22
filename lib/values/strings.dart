@@ -15,8 +15,10 @@ class StringConst {
   static const String BLOG = "Blog";
   static const String SKILLS = "Skills";
   static const String CONTACT = "Contacts";
+  static const String STAMP = "Como conseguir nosso selo!";
 
-  static const String LOGIN = "Contato";
+  static const String LOGIN = "Para Empresas";
+  static const String BACK = "Voltar";
   static const String DEV_EMAIL = "davidcobbina47@gmail.com";
   static const String AREA_EMPRESAS = "/empresas/";
   static const String EMAIL_URL = "mailto:<$DEV_EMAIL>?subject=&body=";
@@ -73,6 +75,11 @@ class StringConst {
   static const String DRIBBLE = "";
   static const String INSTA = "";
 
+  //Stamp Section
+  static const String STAMP_TITLE = "nosso selo";
+  static const String STAMP_TEXT = "Com base no relatório da consultoria PWC, 77% dos investidores pretendem parar de investir em empresas que não trabalhem com soluções ESG - Environmental, social and corporate governance. Para acompanhar essa tendência mundial sua empresa pode também adotar práticas de consciência coletiva, utilizando-se do viés social o acolhimento de emigrantes pode ser um diferencial. Para receber o selo Immigrant-inclusive disponibilizado pela ReValida, é preciso realizar pelo menos 1 ativação a cada 6 meses ou fechar um de nossos planos anuais. A ativação consiste no subsídio de uma validação de diploma.";
+  static const String STAMP_T1 = "Como conseguir nosso selo?";
+  static const String STAMP_T2 = "Sua empresa pode ser amiga da diversidade!";
   //Skills Section
   static const String MY_SKILLS = "my skills";
   static const String SKILLS_TITLE_1 = "What My Design";

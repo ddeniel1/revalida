@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
 import 'package:nimbus/presentation/widgets/content_area.dart';
 import 'package:nimbus/presentation/widgets/nimbus_info_section.dart';
 import 'package:nimbus/presentation/widgets/project_item.dart';
@@ -108,12 +107,6 @@ class _ProjectsSectionState extends State<ProjectsSection>
                   children: [
                     _buildNimbusInfoSectionSm(),
                     SpaceH40(),
-                    NimbusButton(
-                      buttonTitle: StringConst.ALL_PROJECTS,
-                      buttonColor: AppColors.primaryColor,
-                      onPressed: () {},
-                    ),
-                    SpaceH40(),
                     Wrap(
                       spacing: kSpacing,
                       runSpacing: kRunSpacing,
@@ -155,12 +148,6 @@ class _ProjectsSectionState extends State<ProjectsSection>
                           ContentArea(
                             width: contentAreaWidth * 0.6,
                             child: _buildNimbusInfoSectionLg(),
-                          ),
-                          Spacer(),
-                          NimbusButton(
-                            buttonTitle: StringConst.ALL_PROJECTS,
-                            buttonColor: AppColors.primaryColor,
-                            onPressed: () {},
                           ),
                         ],
                       ),
