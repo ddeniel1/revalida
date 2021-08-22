@@ -107,7 +107,7 @@ class _NavSectionWebState extends State<NavSectionWeb> {
             NimbusVerticalDivider(),
             SizedBox(width: contactBtnSpaceLeft),
              NimbusButton(
-              buttonTitle: StringConst.CONTACT_ME,
+              buttonTitle: StringConst.LOGIN,
               width: contactBtnWidth,
               // onPressed: () => openUrlLink(StringConst.EMAIL_URL),
               opensUrl: true,

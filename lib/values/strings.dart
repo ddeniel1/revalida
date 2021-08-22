@@ -15,26 +15,26 @@ class StringConst {
   static const String SKILLS = "Skills";
   static const String CONTACT = "Contacts";
 
-  static const String CONTACT_ME = "Contact Me";
+  static const String LOGIN = "Login";
   static const String DEV_EMAIL = "davidcobbina47@gmail.com";
   static const String EMAIL_URL = "mailto:<$DEV_EMAIL>?subject=&body=";
 
   //Header Section
-  static const String FIRST_NAME = "Ameli";
-  static const String INTRO = "Hi! I'm Ameli Nimbus -";
-  static const String POSITION = "UI/UX Designer";
+  static const String FIRST_NAME = "ReValida";
+  static const String INTRO = "Seu diploma conosco";
+  static const String POSITION = "vale no brasil inteiro!";
   static const String ABOUT_DEV =
-      "Product Designer and Digital Creative Director working in design field for 13 years so far, specialized in UI/UX, Branding and digital designs.";
+      "Venha reconstruir sua vida!\nFaça login ou cadastre-se e veja o que podemos fazer por você:";
   static const String ABOUT_ME_1 =
-      "Product Designer and Digital Creative Director working in design field for";
+      "Venha reconstruir sua vida!";
   static const String ABOUT_ME_2 =
-      "13 years so far, specialized in UI/UX, Branding and digital designs.";
-  static const String DOWNLOAD_CV = "Download CV";
-  static const String EMAIL = "Email";
+      "Faça login ou cadastre-se e veja o que podemos fazer por você:";
+  static const String DOWNLOAD_CV = "Login";
+  static const String EMAIL = "Email"; //RETIRAR SEÇAO INTEIRA
   static const String DEV_EMAIL_2 = "nimbus2000@mail.com";
-  static const String BEHANCE = "Behance";
+  static const String BEHANCE = "";
   static const String BEHANCE_ID = "behance.net/nimbus200";
-  static const String HIRE_ME_NOW = "Hire Me Now";
+  static const String HIRE_ME_NOW = "Cadastre-se";
   static const String UI_UX = "UI/UX Designer";
   static const String UI_UX_DESC = "creative websites for you";
   static const String PHOTOGRAPHER = "Photographer";
@@ -49,12 +49,12 @@ class StringConst {
   static const String HTML = "HTML";
   static const String CSS = "CSS";
 
-  //AboutMe Section
-  static const String HI = "Hi";
-  static const String THERE = "There!";
-  static const String ABOUT_ME = "about me";
+  //Sobre Section
+  static const String HI = "";
+  static const String THERE = "";
+  static const String ABOUT_ME = "sobre nós";
   static const String ABOUT_ME_DESC =
-      "Product Designer and Digital Creative Director working in design field for 13 years so far, specialized in UI/UX, Branding and digital designs. These are the words we live by in everything we do. Every story we tell, every brand we build, and every interaction we create must not only look beautiful. beautifully, too.";
+      "Somos uma empresa que visa ajudar e facilitar os processos de revalidação de diplomas para imigrantes refugiados, para que assim, estes se integrem no mercado de trabalho brasileiro através de empresas que estão buscando incluir pessoas capacitadas e buscando emprego. Somos também uma marca que busca diminuir a discriminação com pessoas refugiadas, para que elas possam ter uma nova vida cada vez melhor.";
   static const String ABOUT_ME_DESC_1 =
       "Product Designer and Digital Creative Director working in design ";
   static const String ABOUT_ME_DESC_2 =
@@ -65,11 +65,11 @@ class StringConst {
       "story we tell, every brand we build, and every interaction we";
   static const String ABOUT_ME_DESC_5 =
       "create must not only look beautiful. beautifully, too.";
-  static const String CREATIVE_DESIGN = "Need Creative Design?";
-  static const String HELP = "I can Help You!";
-  static const String FOLLOW_ME_1 = "You can also follow me here:";
-  static const String DRIBBLE = "Dribble";
-  static const String INSTA = "Insta";
+  static const String CREATIVE_DESIGN = "Precisa do seu diploma validado?";
+  static const String HELP = "Nós podemos te ajudar!";
+  static const String FOLLOW_ME_1 = "";
+  static const String DRIBBLE = "";
+  static const String INSTA = "";
 
   //Skills Section
   static const String MY_SKILLS = "my skills";
@@ -107,10 +107,10 @@ class StringConst {
   static const String AWARD_WINNING_NUM = "18";
 
   //Projects Section
-  static const String MEET_MY_PROJECTS = "Meet My Projects";
-  static const String MY_WORKS = "my works";
+  static const String MEET_MY_PROJECTS = "Conheça nossos serviços";
+  static const String MY_WORKS = "imigrante";
   static const String PROJECTS_DESC =
-      "Product Designer and Digital Creative Director working in design field for 13 years so far, specialized in UI/UX, Branding and digital designs. These are the words we live by in everything we do.";
+      "Além de sermos uma empresa de vagas, focamos no seu desenvolvimento pessoal e sua realocação no mercado.\nQueremos que você consiga conversar com as empresas, pesquisar universidades mais próximas que possam validar o seu diploma.\nAlém de falar conosco quando quiser sanar dúvidas e saber mais sobre como nós funcionamos.";
   static const String ALL_PROJECTS = "All Projects";
   static const String ALL = "All";
   static const String BRANDING = "Branding";
