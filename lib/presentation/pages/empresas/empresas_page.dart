@@ -1,36 +1,22 @@
-import 'dart:ui' as ui;
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/pages/home/sections/about_me_section.dart';
-import 'package:nimbus/presentation/pages/home/sections/awards_section.dart';
-import 'package:nimbus/presentation/pages/home/sections/blog_section.dart';
-import 'package:nimbus/presentation/pages/home/sections/footer_section.dart';
-import 'package:nimbus/presentation/pages/home/sections/header_section/header_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/nav_section/nav_section_mobile.dart';
 import 'package:nimbus/presentation/pages/home/sections/nav_section/nav_section_web.dart';
-import 'package:nimbus/presentation/pages/home/sections/projects_section.dart';
-import 'package:nimbus/presentation/pages/home/sections/skills_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/statistics_section.dart';
 import 'package:nimbus/presentation/widgets/app_drawer.dart';
 import 'package:nimbus/presentation/widgets/nav_item.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 import 'package:nimbus/utils/functions.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:visibility_detector/visibility_detector.dart';
 
 
-
-class HomePage extends StatefulWidget {
+class EmpresasPage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _EmpresasPageState createState() => _EmpresasPageState();
 }
 
-class _HomePageState extends State<HomePage>
+class _EmpresasPageState extends State<EmpresasPage>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
     duration: const Duration(milliseconds: 300),
@@ -46,10 +32,7 @@ class _HomePageState extends State<HomePage>
   final ScrollController _scrollController = ScrollController();
 
   final List<NavItemData> navItems = [
-    NavItemData(name: StringConst.HOME, key: GlobalKey(), isSelected: true),
-    NavItemData(name: StringConst.ABOUT, key: GlobalKey()),
-    //NavItemData(name: StringConst.BUSINESS, key: GlobalKey()),
-    NavItemData(name: StringConst.PROJECTS, key: GlobalKey()),
+    NavItemData(name: StringConst.BUSINESS, key: GlobalKey(), isSelected: true),
   ];
 
   @override
@@ -124,39 +107,6 @@ class _HomePageState extends State<HomePage>
                 children: [
                   Stack(
                     children: [
-                      Positioned.fill(
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: Image.asset(ImagePath.BLOB_BEAN_ASH),
-                        ),
-                      ),
-                      Column(
-                        children: [
-                          HeaderSection(
-                            key: navItems[0].key,
-                          ),
-                          SizedBox(height: spacerHeight),
-                          VisibilityDetector(
-                            key: Key("about"),
-                            onVisibilityChanged: (visibilityInfo) {
-                              double visiblePercentage =
-                                  visibilityInfo.visibleFraction * 100;
-                              if (visiblePercentage > 10) {
-                                _controller.forward();
-                              }
-                            },
-                            child: Container(
-                              key: navItems[1].key,
-                              child: AboutMeSection(),
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                  SizedBox(height: spacerHeight),
-                  Stack(
-                    children: [
                       Positioned(
                         top: assignWidth(context, 0.1),
                         left: -assignWidth(context, 0.05),
@@ -168,29 +118,15 @@ class _HomePageState extends State<HomePage>
                       ),
                       Column(
                         children: [
-                         // Container(
-                           // key: navItems[2].key,
-                            //child: StatisticsSection(),
-                        //  ),
-                          SizedBox(height: spacerHeight),
                           Container(
-                            key: navItems[2].key,
-                            child: ProjectsSection(),
+                            key: navItems[0].key,
+                            child: StatisticsSection(),
                           ),
+                          SizedBox(height: spacerHeight),
                         ],
                       ),
                     ],
                   ),
-                  SizedBox(height: spacerHeight),
-                  Stack(
-                    children: [
-                      Column(
-                        children: [
-                          FooterSection()
-                        ]
-                      )
-                    ]
-                  )
                 ],
               ),
             ),

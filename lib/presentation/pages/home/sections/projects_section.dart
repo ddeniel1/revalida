@@ -82,6 +82,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
   @override
   Widget build(BuildContext context) {
     double screenWidth = widthOfScreen(context) - (getSidePadding(context) * 2);
+    double screenHeight = heightOfScreen(context);
     double contentAreaWidth = screenWidth;
     return VisibilityDetector(
       key: Key('project-section-sm'),
@@ -168,16 +169,11 @@ class _ProjectsSectionState extends State<ProjectsSection>
                   SpaceH40(),
                   Container(
                     width: widthOfScreen(context),
-                    child: 
-                    Image.asset(ImagePath.STATUS_EXAMPLE)
-
-
-
-                    //Wrap(
-                      //spacing: assignWidth(context, 0.025),
-                      //runSpacing: assignWidth(context, 0.025),
-                      //children: _buildProjects(selectedProject),
-                    //),
+                    child: Wrap(
+                      spacing: assignWidth(context, 0.025),
+                      runSpacing: assignWidth(context, 0.025),
+                      children: _buildProjects(selectedProject),
+                    ),
                   ),
                 ],
               ),
@@ -195,6 +191,19 @@ class _ProjectsSectionState extends State<ProjectsSection>
       hasTitle2: false,
       body: StringConst.PROJECTS_DESC,
 //      child: ,
+    );
+  }
+  Widget _buildNimbusInfoSectionBg() {
+    return NimbusInfoSection2(
+      sectionTitle: StringConst.MY_WORKS,
+      title1: StringConst.MEET_MY_PROJECTS,
+      hasTitle2: false,
+      body: StringConst.SE_VIRA_COM_O_NOME,
+      child: Wrap(
+        spacing: kSpacing,
+        runSpacing: kRunSpacing,
+        children: _buildProjectCategories(projectCategories),
+      ),
     );
   }
 

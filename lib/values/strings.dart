@@ -3,6 +3,7 @@ part of values;
 class StringConst {
   //strings
   static const String APP_NAME = "ReValida";
+  static const String SECOND_NAME = "ReValida - Empresas";
 
   //Nav Section
   static const String NAME_ABBREV = "CA";
@@ -17,6 +18,7 @@ class StringConst {
 
   static const String LOGIN = "Contato";
   static const String DEV_EMAIL = "davidcobbina47@gmail.com";
+  static const String AREA_EMPRESAS = "/empresas/";
   static const String EMAIL_URL = "mailto:<$DEV_EMAIL>?subject=&body=";
 
   //Header Section
@@ -114,15 +116,18 @@ class StringConst {
   static const String ALL_PROJECTS = "All Projects"; //botao que o daniel vai mexer
   static const String ALL = "Documentos necessários";
   static const String BRANDING = "Vagas";
+  static const String EMPRESAS = "Empresas ativas";
   static const String PACKAGING = "";
   static const String PHOTOGRAPHY = "";
   static const String WEB_DESIGN = "";
+
   static const String PORTFOLIO_1_TITLE = "Urban Experience";
   static const String PORTFOLIO_2_TITLE = "Graphic Design";
   static const String PORTFOLIO_3_TITLE = "Launch Product";
   static const String PORTFOLIO_4_TITLE = "3D Animation";
   static const String PORTFOLIO_5_TITLE = "Collect Idea";
   static const String PORTFOLIO_6_TITLE = "Company Branding";
+  static const String SE_VIRA_COM_O_NOME = "BLAHBLAHBLAHBLAH";
 
   //Awards & Section
   static const String MY = "My";
