@@ -278,11 +278,21 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                   width: buttonWidth,
                                   height: buttonHeight,
                                   buttonTitle: StringConst.HIRE_ME_NOW,
-                                  opensUrl: true,
-                                  url: StringConst.EMAIL_URL,
+                                  onPressed: () {
+                                    showAlertDialog(
+                                      context,
+                                      "Cadastro bem-sucedido!");
+                                    },
+                                ),
+                                //NimbusButton(
+                                  //width: buttonWidth,
+                                  //height: buttonHeight,
+                                  //buttonTitle: StringConst.HIRE_ME_NOW,
+                                  //opensUrl: true,
+                                  //url: StringConst.EMAIL_URL,
                                   // onPressed: () =>
                                   //     openUrlLink(StringConst.EMAIL_URL),
-                                ),
+                                //),
                                 // NimBusButtonLink(
                                 //   width: buttonWidth,
                                 //   height: buttonHeight,

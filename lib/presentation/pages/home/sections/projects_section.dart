@@ -168,11 +168,16 @@ class _ProjectsSectionState extends State<ProjectsSection>
                   SpaceH40(),
                   Container(
                     width: widthOfScreen(context),
-                    child: Wrap(
-                      spacing: assignWidth(context, 0.025),
-                      runSpacing: assignWidth(context, 0.025),
-                      children: _buildProjects(selectedProject),
-                    ),
+                    child: 
+                    Image.asset(ImagePath.STATUS_EXAMPLE)
+
+
+
+                    //Wrap(
+                      //spacing: assignWidth(context, 0.025),
+                      //runSpacing: assignWidth(context, 0.025),
+                      //children: _buildProjects(selectedProject),
+                    //),
                   ),
                 ],
               ),
