@@ -112,18 +112,6 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                         width: sizeOfBlobSm,
                       ),
                     ),
-                    Positioned(
-                      left: -(sizeOfGoldenGlobe * 0.5),
-                      top: blobOffset + dottedGoldenGlobeOffset,
-                      child: RotationTransition(
-                        turns: _controller,
-                        child: Image.asset(
-                          ImagePath.DOTS_GLOBE_YELLOW,
-                          width: sizeOfGoldenGlobe,
-                          height: sizeOfGoldenGlobe,
-                        ),
-                      ),
-                    ),
                   ],
                 ),
                 Positioned(

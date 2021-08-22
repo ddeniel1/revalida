@@ -199,33 +199,6 @@ class _AwardsSectionState extends State<AwardsSection>
         children: [
           Stack(
             children: [
-              Positioned(
-                left: 0,
-                bottom: 0,
-                child: ResponsiveBuilder(
-                  refinedBreakpoints: RefinedBreakpoints(),
-                  builder: (context, sizingInformation) {
-                    double screenWidth = sizingInformation.screenSize.width;
-                    if (screenWidth < (RefinedBreakpoints().tabletSmall)) {
-                      return RotationTransition(
-                        turns: _controller,
-                        child: Image.asset(
-                          ImagePath.DOTS_GLOBE_YELLOW,
-                          width: Sizes.WIDTH_150,
-                          height: Sizes.HEIGHT_150,
-                        ),
-                      );
-                    } else {
-                      return RotationTransition(
-                        turns: _controller,
-                        child: Image.asset(
-                          ImagePath.DOTS_GLOBE_YELLOW,
-                        ),
-                      );
-                    }
-                  },
-                ),
-              ),
               Image.asset(
                 ImagePath.DEV_AWARD,
               ),

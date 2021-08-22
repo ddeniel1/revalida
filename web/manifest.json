@@ -1,11 +1,11 @@
 {
-    "name": "Nimbus CV",
-    "short_name": "Nimbus CV",
+    "name": "ReValida",
+    "short_name": "ReValida",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A Beautifully engineered portfolio website built with flutter.",
+    "description": "A Beautifully engineered website built by Daniel Filho with flutter.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

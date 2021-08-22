@@ -14,6 +14,7 @@ import 'package:nimbus/presentation/pages/home/sections/statistics_section.dart'
 import 'package:nimbus/presentation/widgets/app_drawer.dart';
 import 'package:nimbus/presentation/widgets/nav_item.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 import 'package:nimbus/utils/functions.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -182,12 +183,26 @@ class _HomePageState extends State<HomePage>
                   SizedBox(height: spacerHeight),
                   Stack(
                     children: [
-                      Positioned(
-                        left: -assignWidth(context, 0.6),
-                        child: Image.asset(ImagePath.BLOB_ASH),
-                      ),
-                    ],
+                      Column(
+                        children: [
+                          WebView(
+                            initialUrl: 'http://revalida.herokuapp.com/public/dashboard/ceadfa5e-0ad6-4de3-8ead-e0a795c7ae39',
+                            javascriptMode: JavascriptMode.unrestricted
+                          )
+                        ]
+                      )
+                    ]
                   ),
+                  SizedBox(height: spacerHeight),
+                  Stack(
+                    children: [
+                      Column(
+                        children: [
+                          FooterSection()
+                        ]
+                      )
+                    ]
+                  )
                 ],
               ),
             ),
