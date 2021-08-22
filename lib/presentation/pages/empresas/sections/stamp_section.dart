@@ -75,7 +75,7 @@ class _StampSectionState extends State<StampSection>
     double contentAreaHeightSm = screenHeight * 0.6;
     double contentAreaWidthLg = screenWidth * 0.5;
     return VisibilityDetector(
-      key: Key('about-section'),
+      key: Key('STAMP-SECTION'),
       onVisibilityChanged: (visibilityInfo) {
         double visiblePercentage = visibilityInfo.visibleFraction * 100;
         if (visiblePercentage > 25) {
@@ -216,11 +216,11 @@ class _StampSectionState extends State<StampSection>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  StringConst.HI,
+                  "",
                   style: titleStyle,
                 ),
                 Text(
-                  StringConst.THERE,
+                  "",
                   style: titleStyle,
                 ),
               ],
@@ -289,10 +289,10 @@ class _StampSectionState extends State<StampSection>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               NimbusInfoSection1(
-                sectionTitle: StringConst.ABOUT_ME,
-                title1: StringConst.CREATIVE_DESIGN,
-                title2: StringConst.HELP,
-                body: StringConst.ABOUT_ME_DESC,
+                sectionTitle: StringConst.STAMP_TITLE,
+                title1: StringConst.STAMP_T1,
+                title2: StringConst.STAMP_T2,
+                body: StringConst.STAMP_TEXT,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -300,14 +300,6 @@ class _StampSectionState extends State<StampSection>
                       StringConst.FOLLOW_ME_1,
                       style: textTheme.headline6?.copyWith(
                         color: AppColors.black,
-                      ),
-                    ),
-                    SpaceH16(),
-                    Wrap(
-                      spacing: kSpacingLg,
-                      runSpacing: kRunSpacingLg,
-                      children: _buildSocialButtons(
-                        Data.socialData2,
                       ),
                     ),
                   ],
@@ -324,8 +316,8 @@ class _StampSectionState extends State<StampSection>
     TextTheme textTheme = Theme.of(context).textTheme;
     return NimbusInfoSection2(
       sectionTitle: StringConst.STAMP_TITLE,
-      title1: StringConst.CREATIVE_DESIGN,
-      title2: StringConst.HELP,
+      title1: StringConst.STAMP_T1,
+      title2: StringConst.STAMP_T2,
       body: StringConst.STAMP_TEXT,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

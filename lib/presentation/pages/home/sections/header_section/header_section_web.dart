@@ -160,7 +160,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
               Stack(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: heightOfStack * 0.05),
+                    margin: EdgeInsets.only(top: heightOfStack * 0.01),
                     child: SelectableText(
                       StringConst.FIRST_NAME,
                       style: textTheme.headline1?.copyWith(
@@ -281,66 +281,6 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                     ),
                   ),
                 ],
-              ),
-              SizedBox(height: 150),
-              Container(
-                margin: EdgeInsets.only(left: (sizeOfBlobSm * 0.35)),
-                child: ResponsiveBuilder(
-                  refinedBreakpoints: RefinedBreakpoints(),
-                  builder: (context, sizingInformation) {
-                    double screenWidth = sizingInformation.screenSize.width;
-                    if (screenWidth < RefinedBreakpoints().tabletNormal) {
-                      return Container(
-                         margin: EdgeInsets.only(right: (sizeOfBlobSm * 0.35)),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: buildCardRow(
-                            context: context,
-                            data: Data.nimbusCardData,
-                            width: contentAreaWidth,
-                            isHorizontal: false,
-                            hasAnimation: false,
-                          ),
-                        ),
-                      );
-                    }else if (screenWidth >=
-                            RefinedBreakpoints().tabletNormal &&
-                        screenWidth <= 1024) {
-                      return Wrap(
-                        runSpacing: 24,
-                        children: [
-                          SizedBox(width: contentAreaWidth * 0.03),
-                          cardsForTabletView[0],
-                          SpaceW40(),
-                          cardsForTabletView[1],
-                          SizedBox(width: contentAreaWidth * 0.03),
-                          Center(
-                            child: Container(
-                              margin: EdgeInsets.only(top: 20),
-                              child: cardsForTabletView[2],
-                            ),
-                          ),
-                        ],
-                      );
-                    } else {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              ...buildCardRow(
-                                context: context,
-                                data: Data.nimbusCardData,
-                                width: contentAreaWidth / 3.8,
-                              ),
-                              Spacer(),
-                            ],
-                          ),
-                        ],
-                      );
-                    } 
-                  },
-                ),
               ),
             ],
           ),

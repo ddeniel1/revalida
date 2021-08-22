@@ -12,8 +12,6 @@ import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
-import 'sections/header_section/header_section.dart';
-
 
 class EmpresasPage extends StatefulWidget {
   @override

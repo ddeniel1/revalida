@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/widgets/buttons/social_button_2.dart';
 import 'package:nimbus/presentation/widgets/content_area.dart';
 import 'package:nimbus/presentation/widgets/empty.dart';
 import 'package:nimbus/presentation/widgets/nimbus_info_section.dart';
-import 'package:nimbus/presentation/widgets/nimbus_link.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/utils/functions.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
@@ -133,40 +130,6 @@ class _AboutMeSectionState extends State<AboutMeSection>
         ),
       ),
     );
-  }
-
-  List<Widget> _buildSocialButtons(
-    List<SocialButton2Data> data, {
-    double? width,
-  }) {
-    List<Widget> items = [];
-
-    for (int index = 0; index < data.length; index++) {
-      items.add(
-        SocialButton2(
-          width: width,
-          title: data[index].title.toUpperCase(),
-          iconData: data[index].iconData,
-          onPressed: () => openUrlLink(data[index].url),
-          titleColor: data[index].titleColor,
-          buttonColor: data[index].buttonColor,
-          iconColor: data[index].iconColor,
-        ),
-        // NimBusLink(
-        //   url: data[index].url,
-        //   child: SocialButton2(
-        //     width: width,
-        //     title: data[index].title.toUpperCase(),
-        //     iconData: data[index].iconData,
-        //     onPressed: () {},
-        //     titleColor: data[index].titleColor,
-        //     buttonColor: data[index].buttonColor,
-        //     iconColor: data[index].iconColor,
-        //   ),
-        // ),
-      );
-    }
-    return items;
   }
 
   Widget _buildImage({required double width, required double height}) {
@@ -303,14 +266,6 @@ class _AboutMeSectionState extends State<AboutMeSection>
                         color: AppColors.black,
                       ),
                     ),
-                    SpaceH16(),
-                    Wrap(
-                      spacing: kSpacingLg,
-                      runSpacing: kRunSpacingLg,
-                      children: _buildSocialButtons(
-                        Data.socialData2,
-                      ),
-                    ),
                   ],
                 ),
               ),
@@ -334,12 +289,6 @@ class _AboutMeSectionState extends State<AboutMeSection>
           Text(
             StringConst.FOLLOW_ME_1,
             style: textTheme.headline6?.copyWith(color: AppColors.black),
-          ),
-          SpaceH16(),
-          Wrap(
-            spacing: kSpacingSm,
-            runSpacing: kRunSpacingSm,
-            children: _buildSocialButtons(Data.socialData2),
           ),
         ],
       ),

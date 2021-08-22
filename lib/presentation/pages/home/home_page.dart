@@ -40,7 +40,6 @@ class _HomePageState extends State<HomePage>
   final List<NavItemData> navItems = [
     NavItemData(name: StringConst.HOME, key: GlobalKey(), isSelected: true),
     NavItemData(name: StringConst.ABOUT, key: GlobalKey()),
-    //NavItemData(name: StringConst.BUSINESS, key: GlobalKey()),
     NavItemData(name: StringConst.PROJECTS, key: GlobalKey()),
   ];
 
@@ -127,6 +126,9 @@ class _HomePageState extends State<HomePage>
                           HeaderSection(
                             key: navItems[0].key,
                           ),
+                          Divider(
+                            color: Color(0xFF001a00)
+                          ),
                           SizedBox(height: spacerHeight),
                           VisibilityDetector(
                             key: Key("about"),
@@ -146,6 +148,9 @@ class _HomePageState extends State<HomePage>
                       )
                     ],
                   ),
+                  Divider(
+                            color: Color(0xFF001a00)
+                          ),
                   SizedBox(height: spacerHeight),
                   Stack(
                     children: [
@@ -173,6 +178,9 @@ class _HomePageState extends State<HomePage>
                       ),
                     ],
                   ),
+                  Divider(
+                            color: Color(0xFF001a00)
+                          ),
                   SizedBox(height: spacerHeight),
                   Stack(
                     children: [
