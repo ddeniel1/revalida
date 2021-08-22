@@ -123,6 +123,7 @@ class StringConst {
   static const String PORTFOLIO_4_TITLE = "3D Animation";
   static const String PORTFOLIO_5_TITLE = "Collect Idea";
   static const String PORTFOLIO_6_TITLE = "Company Branding";
+  static const String SE_VIRA_COM_O_NOME = "BLAHBLAHBLAHBLAH";
 
   //Awards & Section
   static const String MY = "My";

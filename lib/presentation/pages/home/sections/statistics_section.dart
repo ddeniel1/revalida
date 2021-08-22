@@ -30,7 +30,7 @@ class _StatisticsSectionState extends State<StatisticsSection>
   void initState() {
         
     final IFrameElement _iframeElement = IFrameElement();
-    _iframeElement.height = '500';
+    _iframeElement.height = '1000';
     _iframeElement.width = '500';
     _iframeElement.src = 'http://revalida.herokuapp.com/public/dashboard/ceadfa5e-0ad6-4de3-8ead-e0a795c7ae39';
     _iframeElement.style.border = 'none';
@@ -110,7 +110,7 @@ class _StatisticsSectionState extends State<StatisticsSection>
                         children: [
                           Spacer(),
                           SizedBox(
-                              height: 500,
+                              height: heightOfScreen(context),
                               width: contentAreaWidth,
                               child: _iframeWidget,
                           ),
