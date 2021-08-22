@@ -15,7 +15,7 @@ class StringConst {
   static const String SKILLS = "Skills";
   static const String CONTACT = "Contacts";
 
-  static const String LOGIN = "Login";
+  static const String LOGIN = "Contato";
   static const String DEV_EMAIL = "davidcobbina47@gmail.com";
   static const String EMAIL_URL = "mailto:<$DEV_EMAIL>?subject=&body=";
 
@@ -24,16 +24,16 @@ class StringConst {
   static const String INTRO = "Seu diploma conosco";
   static const String POSITION = "vale no brasil inteiro!";
   static const String ABOUT_DEV =
-      "Venha reconstruir sua vida!\nFaça login ou cadastre-se e veja o que podemos fazer por você:";
+      "Venha recomeçar sua vida!\nFaça login ou cadastre-se e veja o que podemos fazer por você:";
   static const String ABOUT_ME_1 =
-      "Venha reconstruir sua vida!";
+      "Venha recomeçar sua vida!";
   static const String ABOUT_ME_2 =
       "Faça login ou cadastre-se e veja o que podemos fazer por você:";
   static const String DOWNLOAD_CV = "Login";
-  static const String EMAIL = "Email"; //RETIRAR SEÇAO INTEIRA
-  static const String DEV_EMAIL_2 = "nimbus2000@mail.com";
+  static const String EMAIL = ""; //RETIRAR SEÇAO INTEIRA
+  static const String DEV_EMAIL_2 = "";
   static const String BEHANCE = "";
-  static const String BEHANCE_ID = "behance.net/nimbus200";
+  static const String BEHANCE_ID = "";
   static const String HIRE_ME_NOW = "Cadastre-se";
   static const String UI_UX = "UI/UX Designer";
   static const String UI_UX_DESC = "creative websites for you";
