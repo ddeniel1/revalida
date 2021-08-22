@@ -243,20 +243,23 @@ class _ProjectsSectionState extends State<ProjectsSection>
       items.add(
         ScaleTransition(
           scale: _projectScaleAnimation,
-          child: ProjectItem(
-            width: isMobile
-                ? assignWidth(context, data[index].mobileWidth)
-                : assignWidth(context, data[index].width),
-            height: isMobile
-                ? assignHeight(context, data[index].mobileHeight)
-                : assignHeight(context, data[index].height),
-            bannerHeight: isMobile
-                ? assignHeight(context, data[index].mobileHeight) / 2
-                : assignHeight(context, data[index].height) / 3,
-            title: data[index].title,
-            subtitle: data[index].category,
-            imageUrl: data[index].projectCoverUrl,
-          ),
+            child: Align(
+              alignment: Alignment.center,
+                child: ProjectItem(
+                  width: isMobile
+                    ? assignWidth(context, data[index].mobileWidth)
+                    : assignWidth(context, data[index].width),
+                    height: isMobile
+                    ? assignHeight(context, data[index].mobileHeight)
+                    : assignHeight(context, data[index].height),
+                    bannerHeight: isMobile
+                    ? assignHeight(context, data[index].mobileHeight) / 2
+                    : assignHeight(context, data[index].height) / 3,
+                    title: data[index].title,
+                    subtitle: data[index].category,
+                    imageUrl: data[index].projectCoverUrl,
+                  ),
+            ),
         ),
       );
     }
