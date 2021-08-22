@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/pages/home/sections/nav_section/nav_section_mobile.dart';
-import 'package:nimbus/presentation/pages/home/sections/nav_section/nav_section_web.dart';
-import 'package:nimbus/presentation/pages/home/sections/statistics_section.dart';
+import 'package:nimbus/presentation/pages/empresas/sections/nav_section/nav_section_mobile.dart';
+import 'package:nimbus/presentation/pages/empresas/sections/nav_section/nav_section_web.dart';
+import 'package:nimbus/presentation/pages/empresas/sections/stamp_section.dart';
+import 'package:nimbus/presentation/pages/empresas/sections/statistics_section.dart';
 import 'package:nimbus/presentation/widgets/app_drawer.dart';
 import 'package:nimbus/presentation/widgets/nav_item.dart';
 import 'package:nimbus/utils/functions.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:visibility_detector/visibility_detector.dart';
+
+import 'sections/header_section/header_section.dart';
 
 
 class EmpresasPage extends StatefulWidget {
@@ -33,6 +37,7 @@ class _EmpresasPageState extends State<EmpresasPage>
 
   final List<NavItemData> navItems = [
     NavItemData(name: StringConst.BUSINESS, key: GlobalKey(), isSelected: true),
+    NavItemData(name: StringConst.STAMP, key: GlobalKey()),
   ];
 
   @override
@@ -125,6 +130,34 @@ class _EmpresasPageState extends State<EmpresasPage>
                           SizedBox(height: spacerHeight),
                         ],
                       ),
+                    ],
+                  ),
+                  Stack(
+                    children: [
+                      Positioned.fill(
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Image.asset(ImagePath.BLOB_BEAN_ASH),
+                        ),
+                      ),
+                      Column(
+                        children: [
+                          VisibilityDetector(
+                            key: Key("STAMP"),
+                            onVisibilityChanged: (visibilityInfo) {
+                              double visiblePercentage =
+                                  visibilityInfo.visibleFraction * 100;
+                              if (visiblePercentage > 10) {
+                                _controller.forward();
+                              }
+                            },
+                            child: Container(
+                              key: navItems[1].key,
+                              child: StampSection(),
+                            ),
+                          ),
+                        ],
+                      )
                     ],
                   ),
                 ],

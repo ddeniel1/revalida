@@ -15,8 +15,10 @@ class StringConst {
   static const String BLOG = "Blog";
   static const String SKILLS = "Skills";
   static const String CONTACT = "Contacts";
+  static const String STAMP = "Como conseguir nosso selo!";
 
-  static const String LOGIN = "Contato";
+  static const String LOGIN = "Para Empresas";
+  static const String BACK = "Voltar";
   static const String DEV_EMAIL = "davidcobbina47@gmail.com";
   static const String AREA_EMPRESAS = "/empresas/";
   static const String EMAIL_URL = "mailto:<$DEV_EMAIL>?subject=&body=";
@@ -72,6 +74,10 @@ class StringConst {
   static const String FOLLOW_ME_1 = "";
   static const String DRIBBLE = "";
   static const String INSTA = "";
+
+  //Stamp Section
+  static const String STAMP_TITLE = "";
+  static const String STAMP_TEXT = "";
 
   //Skills Section
   static const String MY_SKILLS = "my skills";
