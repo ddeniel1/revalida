@@ -33,7 +33,7 @@ class StringConst {
       "Faça login ou cadastre-se e veja o que podemos fazer por você:";
   static const String DOWNLOAD_CV = "Login";
   static const String EMAIL = ""; //RETIRAR SEÇAO INTEIRA
-  static const String DEV_EMAIL_2 = "";
+  static const String DEV_EMAIL_2 = "contato@revalida.com";
   static const String BEHANCE = "";
   static const String BEHANCE_ID = "";
   static const String HIRE_ME_NOW = "Cadastre-se";
@@ -56,7 +56,7 @@ class StringConst {
   static const String THERE = "";
   static const String ABOUT_ME = "sobre nós";
   static const String ABOUT_ME_DESC =
-      "Somos uma empresa que visa ajudar e facilitar os processos de revalidação de diplomas para imigrantes refugiados, para que assim, estes se integrem no mercado de trabalho brasileiro através de empresas que estão buscando incluir pessoas capacitadas e buscando emprego. Somos também uma marca que busca diminuir a discriminação com pessoas refugiadas, para que elas possam ter uma nova vida cada vez melhor.";
+      "Somos uma empresa que visa ajudar e facilitar os processos de revalidação de diplomas para imigrantes refugiados, para que assim, estes se integrem no mercado de trabalho brasileiro através de empresas que estão buscando incluir pessoas capacitadas a procura de emprego. Somos também uma marca que busca diminuir a discriminação com pessoas refugiadas, para que elas possam ter uma nova vida cada vez melhor.";
   static const String ABOUT_ME_DESC_1 =
       "Product Designer and Digital Creative Director working in design ";
   static const String ABOUT_ME_DESC_2 =
@@ -118,14 +118,14 @@ class StringConst {
   static const String BRANDING = "Vagas";
   static const String EMPRESAS = "Empresas ativas";
   static const String PACKAGING = "";
-  static const String PHOTOGRAPHY = "";
+  static const String PHOTOGRAPHY = "Status";
   static const String WEB_DESIGN = "";
 
-  static const String PORTFOLIO_1_TITLE = "Urban Experience";
+  static const String PORTFOLIO_1_TITLE = "Diploma";
   static const String PORTFOLIO_2_TITLE = "Graphic Design";
   static const String PORTFOLIO_3_TITLE = "Launch Product";
   static const String PORTFOLIO_4_TITLE = "3D Animation";
-  static const String PORTFOLIO_5_TITLE = "Collect Idea";
+  static const String PORTFOLIO_5_TITLE = "Seu diploma";
   static const String PORTFOLIO_6_TITLE = "Company Branding";
   static const String SE_VIRA_COM_O_NOME = "BLAHBLAHBLAHBLAH";
 
@@ -189,13 +189,13 @@ class StringConst {
   static const String MAIL_ME = "E-mail";
   static const String FOLLOW_ME_2 = "Nos siga";
   static const String FOLLOW_ME_2_URL = "behance.net/nimbus2000";
-  static const String RIGHTS_RESERVED = "© 2021 All rights reserved";
-  static const String BUILT_BY = "Built with Flutter by";
-  static const String DAVID_COBBINA = "David Cobbina";
-  static const String DESIGNED_BY = "Designed by";
-  static const String WEB_GENIUS_LAB = "WebGeniusLab";
-  static const String MADE_IN_GHANA = "Made in";
-  static const String WITH_LOVE = "with";
+  static const String RIGHTS_RESERVED = "© 2021 Todos os direitos reservados";
+  static const String BUILT_BY = "Feito por Grupo 7 - Augusta";
+  static const String DAVID_COBBINA = "";
+  static const String DESIGNED_BY = "";
+  static const String WEB_GENIUS_LAB = "";
+  static const String MADE_IN_GHANA = "";
+  static const String WITH_LOVE = "";
   static const String FIND_ME = "Find me on..";
 
   //URL Links
@@ -207,7 +207,6 @@ class StringConst {
   static const String GITHUB_URL = "https://github.com/";
   static const String FACEBOOK_URL = "https://facebook.com/";
   static const String TWITTER_URL = "http://twitter.com/";
-  static const String DAVID_LEGEND_URL = "https://davidcobbina.com/#/";
   static const String DESIGN_URL =
       "https://www.behance.net/gallery/95351691/Resume-Design-03";
 }
